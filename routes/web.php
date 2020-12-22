@@ -31,6 +31,11 @@ Route::redirect('/anasayfa', '/home');
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->name("test");;
 Route::get('/about', [HomeController::class, 'aboutus'])->name("aboutus");
 
+
+//--- Admin---
+
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name("adminhome");;
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
