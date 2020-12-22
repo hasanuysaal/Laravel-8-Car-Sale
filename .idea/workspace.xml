@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f12270-7996-476b-9663-9b2be2870584" name="Default Changelist" comment="Admin Panel Integrated">
-      <changelist_data name="hasanuysaal" email="uysalhasan32@gmail.com" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +207,7 @@
       <workItem from="1607268843800" duration="7316000" />
       <workItem from="1607277577441" duration="560000" />
       <workItem from="1607424904058" duration="2039000" />
-      <workItem from="1608667020925" duration="7282000" />
+      <workItem from="1608667020925" duration="8335000" />
     </task>
     <task id="LOCAL-00001" summary="Admin Panel Integrated">
       <created>1608672959752</created>
@@ -230,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608674130595</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Admin Panel Integrated">
+      <created>1608674363573</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608674363573</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +259,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Admin Panel Integrated" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1608674631499">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1608674631499" />
     <state x="638" y="187" key="FileChooserDialogImpl" timestamp="1606922575019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -280,13 +291,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="529" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607278133159" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608674135079">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608674488507">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608674135079" />
-    <state x="639" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1608673771031">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608674488507" />
+    <state x="639" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1608674377960">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="639" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.824@0.0.1536.824" timestamp="1608673771031" />
+    <state x="639" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.824@0.0.1536.824" timestamp="1608674377960" />
   </component>
 </project>
