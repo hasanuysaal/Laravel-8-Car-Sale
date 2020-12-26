@@ -4,7 +4,7 @@
             <i class="fa fa-bars"></i>
             <span>All departments</span>
         </div>
-        <ul style="display: none;">
+        <ul>
             <li><a href="#">Fresh Meat</a></li>
             <li><a href="#">Vegetables</a></li>
             <li><a href="#">Fruit & Nut Gifts</a></li>
