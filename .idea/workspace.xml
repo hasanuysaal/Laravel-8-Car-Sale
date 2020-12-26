@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f12270-7996-476b-9663-9b2be2870584" name="Default Changelist" comment="Admin Panel Integrated">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02995f20-fbef-41a3-918a-1046e3a28070.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/02995f20-fbef-41a3-918a-1046e3a28070.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,18 +182,19 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Php\LaravelProject\resources\views\home" />
-      <recent name="C:\Php\LaravelProject\resources\views\layouts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Php\LaravelProject\resources\views\home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Php\LaravelProject\resources\views\admin" />
+      <recent name="C:\Php\LaravelProject\resources\views\home" />
+      <recent name="C:\Php\LaravelProject\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -215,6 +220,8 @@
       <workItem from="1607424904058" duration="2039000" />
       <workItem from="1608667020925" duration="8937000" />
       <workItem from="1608984265694" duration="7065000" />
+      <workItem from="1608995450193" duration="2801000" />
+      <workItem from="1609006508402" duration="12100000" />
     </task>
     <task id="LOCAL-00001" summary="Admin Panel Integrated">
       <created>1608672959752</created>
@@ -267,10 +274,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Admin Panel Integrated" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="687" y="59" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608988844450">
+    <state x="687" y="59" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609009761256">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="687" y="59" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608988844450" />
+    <state x="687" y="59" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609009761256" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1608674631499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,10 +302,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1342" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606828238923" />
-    <state x="1060" y="366" key="NewPhpFileDialog" timestamp="1608985428504">
+    <state x="1060" y="366" key="NewPhpFileDialog" timestamp="1609014346463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1060" y="366" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1608985428504" />
+    <state x="1060" y="366" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1609014346463" />
     <state x="529" y="54" key="SettingsEditor" timestamp="1607278133159">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

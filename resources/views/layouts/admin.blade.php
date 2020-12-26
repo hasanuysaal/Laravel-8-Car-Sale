@@ -27,13 +27,14 @@
 <div id="wrapper">
 
     @include('admin._sidebar')
-    <!-- Content Wrapper -->
+
         <div id="content-wrapper" class="d-flex flex-column">
     @include('admin._header')
     @yield('content')
     @include('admin._footer')
     @yield('footer')
         </div>
+
 </div>
 
 </body>
