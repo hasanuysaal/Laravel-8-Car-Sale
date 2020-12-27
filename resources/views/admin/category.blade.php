@@ -6,9 +6,17 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-        </div>
+            <div class="card-header py-3">
+                <div class="row">
+                <h6 class=" col-lg-10 m-0 font-weight-bold text-primary">Categories</h6>
+                <a href="{{route('admin_category_add')}}" class="col-lg-2 btn btn-primary btn-user btn-block">
+                    Add Category
+                </a>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -26,11 +34,13 @@
                     @foreach ($datalist as $rs)
                         <tr>
                             <td>{{$rs->id}}</td>
-                            <td></td>
+                            <td>{{$rs->parent_id}}</td>
                             <td>{{$rs->title}}</td>
                             <td>{{$rs->status}}</td>
                             <td>----------</td>
-                            <td>----------</td>
+                            <td><a href="{{route('admin_category_delete',['id' => $rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a></td>
                         </tr>
                     @endforeach
                     </tbody>
