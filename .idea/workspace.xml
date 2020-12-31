@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6f12270-7996-476b-9663-9b2be2870584" name="Default Changelist" comment="Admin Panel Integrated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +215,7 @@
       <workItem from="1609006508402" duration="12100000" />
       <workItem from="1609071131999" duration="12247000" />
       <workItem from="1609089628343" duration="3568000" />
+      <workItem from="1609414721982" duration="4932000" />
     </task>
     <task id="LOCAL-00001" summary="Admin Panel Integrated">
       <created>1608672959752</created>
