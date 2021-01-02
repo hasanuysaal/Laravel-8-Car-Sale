@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Category Page')
+@section('title', 'Product Page')
 
 @section('content')
 
@@ -8,9 +8,9 @@
     <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <div class="row">
-                <h6 class=" col-lg-10 m-0 font-weight-bold text-primary">Categories</h6>
-                <a href="{{route('admin_category_add')}}" class="col-lg-2 btn btn-primary btn-user btn-block">
-                    Add Category
+                <h6 class=" col-lg-10 m-0 font-weight-bold text-primary">Products</h6>
+                <a href="{{route('admin_product_add')}}" class="col-lg-2 btn btn-primary btn-user btn-block">
+                    Add Product
                 </a>
                 </div>
             </div>
@@ -23,8 +23,15 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Parent</th>
+                        <th>Category</th>
                         <th>Title</th>
+                        <th>Make</th>
+                        <th>Series</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Detail</th>
                         <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -34,13 +41,20 @@
                     @foreach ($datalist as $rs)
                         <tr>
                             <td>{{$rs->id}}</td>
-                            <td>{{$rs->parent_id}}</td>
+                            <td>{{$rs->category_id}}</td>
                             <td>{{$rs->title}}</td>
+                            <td>{{$rs->make}}</td>
+                            <td>{{$rs->series}}</td>
+                            <td>{{$rs->model}}</td>
+                            <td>{{$rs->year}}</td>
+                            <td>{{$rs->price}}</td>
+                            <td>{{$rs->image}}</td>
+                            <td>{{$rs->detail}}</td>
                             <td>{{$rs->status}}</td>
-                            <td><a href="{{route('admin_category_edit',['id' => $rs->id])}}" onclick="return confirm('Edit ! Are you sure?')" class="btn btn-info btn-circle">
+                            <td><a href="{{route('admin_product_edit',['id' => $rs->id])}}" onclick="return confirm('Edit ! Are you sure?')" class="btn btn-info btn-circle">
                                     <i class="fas fa-fw fa-cog"></i>
                                 </a></td>
-                            <td><a href="{{route('admin_category_delete',['id' => $rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle">
+                            <td><a href="{{route('admin_product_delete',['id' => $rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle">
                                     <i class="fas fa-trash"></i>
                                 </a></td>
                         </tr>
