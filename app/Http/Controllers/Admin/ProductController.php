@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -61,6 +62,7 @@ class ProductController extends Controller
         $data->traction = $request->input('traction');
         $data->color = $request->input('color');
         $data->condition = $request->input('condition');
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->save();
         return redirect()->route('admin_products');
     }
@@ -119,6 +121,7 @@ class ProductController extends Controller
         $data->traction = $request->input('traction');
         $data->color = $request->input('color');
         $data->condition = $request->input('condition');
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->save();
         return redirect()->route('admin_products');
     }

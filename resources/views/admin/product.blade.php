@@ -3,7 +3,6 @@
 @section('title', 'Product Page')
 
 @section('content')
-
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -48,7 +47,11 @@
                             <td>{{$rs->model}}</td>
                             <td>{{$rs->year}}</td>
                             <td>{{$rs->price}}</td>
-                            <td>{{$rs->image}}</td>
+                            <td>
+                                @if ($rs->image)
+                                    <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="100" alt="">
+                                @endif
+                            </td>
                             <td>{{$rs->detail}}</td>
                             <td>{{$rs->status}}</td>
                             <td><a href="{{route('admin_product_edit',['id' => $rs->id])}}" onclick="return confirm('Edit ! Are you sure?')" class="btn btn-info btn-circle">

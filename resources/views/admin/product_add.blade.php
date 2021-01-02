@@ -3,8 +3,7 @@
 @section('title', 'Add Product')
 
 @section('js')
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
     <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 @endsection
 
@@ -15,7 +14,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Add Product</h6>
         </div>
         <div class="card-body ">
-            <form class="user" action="{{route('admin_product_store')}}" method="post">
+            <form class="user" action="{{route('admin_product_store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group col-lg-12">
                     <div class="form-group">
@@ -186,6 +185,16 @@
                                             console.error( error );
                                         } );
                                 </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <label>İmage</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="file" class="form-control" name="image">
                             </div>
                         </div>
                     </div>
