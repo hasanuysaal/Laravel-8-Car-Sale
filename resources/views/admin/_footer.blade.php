@@ -15,6 +15,7 @@
 </a>
 </div>
 
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('assets')}}/admin/vendor/jquery/jquery.min.js"></script>
 <script src="{{asset('assets')}}/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

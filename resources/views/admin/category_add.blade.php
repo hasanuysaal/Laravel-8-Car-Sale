@@ -11,7 +11,7 @@
         <div class="card-body ">
             <form class="user" action="{{route('admin_category_create')}}" method="post">
                 @csrf
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-12">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-lg-2">
