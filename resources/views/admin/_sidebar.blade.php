@@ -66,9 +66,9 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+        <a class="nav-link" href="{{route('admin_setting')}}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Settings</span></a>
     </li>
 
     <!-- Divider -->

@@ -22,7 +22,7 @@
     <list default="true" id="f6f12270-7996-476b-9663-9b2be2870584" name="Default Changelist" comment="Admin Panel Integrated">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/015549a2-57e8-4d21-858e-0d6b6a4f1dce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/015549a2-57e8-4d21-858e-0d6b6a4f1dce.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +193,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Php\LaravelProject\resources\views\home" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Php\LaravelProject\resources\views\admin" />
       <recent name="C:\Php\LaravelProject\resources\views\home" />
       <recent name="C:\Php\LaravelProject\resources\views\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Php\LaravelProject\resources\views\home" />
     </key>
   </component>
   <component name="RunManager">
@@ -236,6 +236,7 @@
       <workItem from="1609604371869" duration="3229000" />
       <workItem from="1609611196371" duration="11168000" />
       <workItem from="1610027301875" duration="8172000" />
+      <workItem from="1610037505536" duration="8557000" />
     </task>
     <task id="LOCAL-00001" summary="Admin Panel Integrated">
       <created>1608672959752</created>
@@ -300,14 +301,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="750" y="189" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.824@0.0.1536.824" timestamp="1609598630412" />
-    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610029892298">
+    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610041742897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1610029892298" />
+    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1610041742897" />
     <state x="927" y="247" key="#com.jetbrains.php.refactoring.pullPush.pushDown.PhpPushDownDialog#" timestamp="1609612575698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="927" y="247" key="#com.jetbrains.php.refactoring.pullPush.pushDown.PhpPushDownDialog#/0.0.1536.824@0.0.1536.824" timestamp="1609612575698" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1610040582988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1536.824@0.0.1536.824" timestamp="1610040582988" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1608674631499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
