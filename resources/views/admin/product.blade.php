@@ -30,8 +30,7 @@
                         <th>Year</th>
                         <th>Price</th>
                         <th>Image</th>
-                        <th>Detail</th>
-                        <th>Status</th>
+                        <th>Image Gallery</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -49,11 +48,10 @@
                             <td>{{$rs->price}}</td>
                             <td>
                                 @if ($rs->image)
-                                    <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="100" alt="">
+                                    <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="40px" alt="">
                                 @endif
                             </td>
-                            <td>{{$rs->detail}}</td>
-                            <td>{{$rs->status}}</td>
+                            <td><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}" onclick="return  !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><img src="{{asset('assets')}}/admin/img/gallery.png" height="40px"></a></td>
                             <td><a href="{{route('admin_product_edit',['id' => $rs->id])}}" onclick="return confirm('Edit ! Are you sure?')" class="btn btn-info btn-circle">
                                     <i class="fas fa-fw fa-cog"></i>
                                 </a></td>
