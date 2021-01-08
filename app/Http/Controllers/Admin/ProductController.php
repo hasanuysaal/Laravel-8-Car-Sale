@@ -121,7 +121,10 @@ class ProductController extends Controller
         $data->traction = $request->input('traction');
         $data->color = $request->input('color');
         $data->condition = $request->input('condition');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if ($request->file('image')!=null)
+        {
+            $data->image = Storage::putFile('images',$request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_products');
     }

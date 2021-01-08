@@ -193,7 +193,7 @@
                                 <label>İmage</label>
                             </div>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" name="image" value="{{$data->image}}">
+                                <input type="file" class="form-control" name="image">
                                 @if ($data->image)
                                     <img src="{{Illuminate\Support\Facades\Storage::url($data->image)}}" height="100" alt="">
                                 @endif
