@@ -28,7 +28,7 @@ Route::redirect('/anasayfa', '/home');
 
 
 //Route::get('/home', [HomeController::class, 'index']);
-Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->name("test");;
+//Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->name("test");;
 Route::get('/about', [HomeController::class, 'aboutus'])->name("aboutus");
 
 

@@ -20,12 +20,12 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-lg-2">
-                                <label>Parent</label>
+                                <label>Category</label>
                             </div>
                             <div class="col-lg-10">
                                 <select class="custom-select" name="category_id">
                                     @foreach ($datalist as $rs)
-                                        <option value="{{$rs->id}}">{{$rs->title}}</option>
+                                        <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title)}}</option>
                                     @endforeach
                                 </select>
                             </div>
