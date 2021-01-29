@@ -17,21 +17,23 @@
     </div>
     <div class="humberger__menu__widget">
         <div class="header__top__right__language">
-            <img src="img/language.png" alt="">
-            <div>English</div>
-            <span class="arrow_carrot-down"></span>
-            <ul>
-                <li><a href="#">Spanis</a></li>
-                <li><a href="#">English</a></li>
-            </ul>
-        </div>
-        <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <i class="fa fa-user"></i>
+            @guest
+                <div><a href="{{route('admin_login')}}"> Login</a></div>
+            @endguest
+            @auth
+                <div><a href="#"> {{Auth::user()->name}}</a></div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="{{route('logout')}}">Logout</a></li>
+                </ul>
+            @endauth
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li class="active"><a href="{{route('home')}}">Home</a></li>
             <li><a href="./shop-grid.html">Shop</a></li>
             <li><a href="#">Pages</a>
                 <ul class="header__menu__dropdown">
@@ -83,16 +85,21 @@
                             <a href="#"><i class="fa fa-pinterest-p"></i></a>
                         </div>
                         <div class="header__top__right__language">
-                            <img src="{{ asset('assets') }}/img/language.png" alt="">
-                            <div>English</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">Spanis</a></li>
-                                <li><a href="#">English</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            <i class="fa fa-user"></i>
+                            @guest
+                                <div>
+                                    <a style="color: #1a202c" href="{{route('admin_login')}}"> Login </a>
+                                    <a style="color: #1a202c" href="{{route('register')}}">/ Register</a>
+                                </div>
+                            @endguest
+                            @auth
+                                <div>{{Auth::user()->name}}</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="{{route('logout')}}">Logout</a></li>
+                                </ul>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -103,28 +110,22 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="{{ asset('assets') }}/img/logo.png" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{ asset('assets') }}/img/logo.png" alt=""></a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('home')}}">Shop</a></li>
+                        <li><a href="{{route('aboutus')}}">Aboutus</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
+                        <li><a href="{{route('fag')}}">FAQ</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="header__cart">
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>

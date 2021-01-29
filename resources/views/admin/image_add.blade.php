@@ -65,7 +65,7 @@
                             <td>{{$rs->title}}</td>
                             <td>
                                 @if ($rs->image)
-                                    <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="40px" alt="">
+                                    <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="150px" alt="">
                                 @endif
                             </td>
                             <td><a href="{{route('admin_image_delete',['id' => $rs->id,'product_id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle">

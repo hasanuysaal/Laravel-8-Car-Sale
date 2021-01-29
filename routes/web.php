@@ -20,16 +20,22 @@ Route::get('/', function () {
 })->name("laravel");
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
 
-Route::redirect('/anasayfa', '/home');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//Route::redirect('/anasayfa', '/home');
 
 
 //Route::get('/home', [HomeController::class, 'index']);
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->name("test");;
-Route::get('/about', [HomeController::class, 'aboutus'])->name("aboutus");
+Route::get('/home', [HomeController::class, 'index'])->name('homepage');
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name("aboutus");
+Route::get('/references', [HomeController::class, 'references'])->name("references");
+Route::get('/fag', [HomeController::class, 'fag'])->name("fag");
+Route::get('/contact', [HomeController::class, 'contact'])->name("contact");
+
+
 
 
 //--- Admin---
@@ -74,7 +80,7 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
 
 Route::get('/admin/login', [App\Http\Controllers\Admin\HomeController::class, 'login'])->name("admin_login");
 Route::post('/admin/logincheck', [App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name("admin_logincheck");
-Route::get('/admin/logout', [App\Http\Controllers\Admin\HomeController::class, 'logout'])->name("admin_logout");
+Route::get('/logout', [App\Http\Controllers\Admin\HomeController::class, 'logout'])->name("logout");
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

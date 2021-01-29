@@ -1,12 +1,10 @@
 @extends('layouts.home')
 
-@section('title', 'Araba Alım Satım Sitesi')
+@section('title', $setting->title)
 
-@section('description')
-    Araba Alım Satım İlan Sitesi
-@endsection
+@section('description',$setting->description)
 
-@section('description','Araba,2.el,Araç,Otomobil,Al,Sat')
+@section('keywords',$setting->keywords)
 
 @section('content')
     <!-- Featured Section Begin -->

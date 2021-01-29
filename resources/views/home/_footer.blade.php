@@ -1,3 +1,7 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getSetting()
+@endphp
+
 <!-- Footer Section Begin -->
 <footer class="footer spad">
     <div class="container">
@@ -5,12 +9,12 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__about__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="{{route('home')}}"><img src="img/logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
-                        <li>Phone: +65 11.188.888</li>
-                        <li>Email: hello@colorlib.com</li>
+                        <li>Address: {{$setting->address}}</li>
+                        <li>Phone: {{$setting->phone}}</li>
+                        <li>Email: {{$setting->email}}</li>
                     </ul>
                 </div>
             </div>
@@ -18,7 +22,7 @@
                 <div class="footer__widget">
                     <h6>Useful Links</h6>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
                         <li><a href="#">About Our Shop</a></li>
                         <li><a href="#">Secure Shopping</a></li>
                         <li><a href="#">Delivery infomation</a></li>
@@ -44,10 +48,10 @@
                         <button type="submit" class="site-btn">Subscribe</button>
                     </form>
                     <div class="footer__widget__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        @if ($setting->facebook != null)<a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a> @endif
+                        @if ($setting->instagram != null)<a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a> @endif
+                        @if ($setting->twitter != null)<a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a> @endif
+                        @if ($setting->youtube != null)<a href="{{$setting->youtube}}" target="_blank"><i class="fa fa-pinterest"></i></a> @endif
                     </div>
                 </div>
             </div>
@@ -56,7 +60,7 @@
             <div class="col-lg-12">
                 <div class="footer__copyright">
                     <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{$setting->title}}
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                     <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                 </div>
