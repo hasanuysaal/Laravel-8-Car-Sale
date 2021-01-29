@@ -7,7 +7,7 @@
             <i class="fa fa-bars"></i>
             <span>All departments</span>
         </div>
-        <ul >
+        <ul @if(!isset($page)) style="display:none;" @endif>
             @foreach($parentCategories as $rs)
                 <div class="row">
                 <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="#">{{$rs->title}}</a>

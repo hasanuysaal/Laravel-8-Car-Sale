@@ -27,7 +27,6 @@
 </head>
 
 <body>
-
 @include('home._header')
 <!--Nav-->
 <section class="hero">
@@ -41,13 +40,9 @@
     </div>
 </section>
 <!--NavEnd-->
-@include('home._slider')
-
 @section('content')
 @show
-
 @include('home._footer')
 @yield('footerjs')
-
 </body>
 </html>

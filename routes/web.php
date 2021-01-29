@@ -78,6 +78,13 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
 
 });
 
+Route::middleware('auth')->prefix('/myaccount')->namespace('myaccount')->group(function () {
+
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name("myprofile");
+
+});
+
+
 Route::get('/admin/login', [App\Http\Controllers\Admin\HomeController::class, 'login'])->name("admin_login");
 Route::post('/admin/logincheck', [App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name("admin_logincheck");
 Route::get('/logout', [App\Http\Controllers\Admin\HomeController::class, 'logout'])->name("logout");

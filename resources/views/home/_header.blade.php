@@ -96,7 +96,7 @@
                                 <div>{{Auth::user()->name}}</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="{{route('myprofile')}}">My Account</a></li>
                                     <li><a href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             @endauth
@@ -131,7 +131,6 @@
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                         <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>
             </div>
         </div>
