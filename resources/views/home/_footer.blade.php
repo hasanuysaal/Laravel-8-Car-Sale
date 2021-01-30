@@ -12,9 +12,9 @@
                         <a href="{{route('home')}}"><img src="img/logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li>Address: {{$setting->address}}</li>
-                        <li>Phone: {{$setting->phone}}</li>
-                        <li>Email: {{$setting->email}}</li>
+                        <li><strong>Address: </strong>{{$setting->address}}</li>
+                        <li><strong>Phone: </strong>{{$setting->phone}}</li>
+                        <li><strong>Email: </strong>{{$setting->email}}</li>
                     </ul>
                 </div>
             </div>

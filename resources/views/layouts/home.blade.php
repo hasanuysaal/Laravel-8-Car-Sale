@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css" type="text/css">
     @yield('css')
-    @yield('js')
+    @yield('jss')
 
 </head>
 
 <body>
 @include('home._header')
 <!--Nav-->
-<section class="hero">
+<section class="hero hero-normal">
     <!--Container-->
     <div class="container">
         <div class="row">

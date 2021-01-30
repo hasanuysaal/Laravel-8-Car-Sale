@@ -1116,7 +1116,7 @@
     </column>
     <column id="352" parent="338" name="description">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
     </column>
     <column id="353" parent="338" name="image">
       <Position>6</Position>
@@ -1340,7 +1340,7 @@ tokenable_id</ColNames>
     </column>
     <column id="399" parent="344" name="description">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
     </column>
     <column id="400" parent="344" name="image">
       <Position>5</Position>
@@ -1352,7 +1352,7 @@ tokenable_id</ColNames>
     </column>
     <column id="402" parent="344" name="detail">
       <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
     </column>
     <column id="403" parent="344" name="user_id">
       <Position>8</Position>
@@ -1623,17 +1623,25 @@ tokenable_id</ColNames>
       <Position>12</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="466" parent="347" name="users_email_unique">
+    <column id="466" parent="347" name="address">
+      <Position>13</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </column>
+    <column id="467" parent="347" name="phone">
+      <Position>14</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <index id="468" parent="347" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="467" parent="347" name="PRIMARY">
+    <key id="469" parent="347" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="468" parent="347" name="users_email_unique">
+    <key id="470" parent="347" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

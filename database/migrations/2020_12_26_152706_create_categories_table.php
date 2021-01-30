@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('parent_id')->default(0);
             $table->string('title',150);
             $table->string('keywords')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image',100)->nullable();
             $table->string('status',5)->nullable()->default('false');
             $table->timestamps(); //created_at, updated_at

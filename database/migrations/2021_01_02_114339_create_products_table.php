@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->id()->autoIncrement();
             $table->string('title',150);
             $table->string('keywords')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image',100)->nullable();
             $table->integer('category_id')->nullable();
-            $table->string('detail')->nullable();
+            $table->longText('detail')->nullable();
             $table->integer('user_id')->nullable();
             $table->string('status',5)->nullable()->default('false');
             //--------------
