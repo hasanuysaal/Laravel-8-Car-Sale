@@ -96,7 +96,7 @@
                                 <div>{{Auth::user()->name}}</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="{{route('myprofile')}}">My Account</a></li>
+                                    <li><a href="{{route('userprofile')}}">My Account</a></li>
                                     <li><a href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             @endauth
@@ -110,7 +110,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{route('home')}}"><img src="{{ asset('assets') }}/img/logo.png" alt=""></a>
+                    <a href="{{route('home')}}"><img src="https://arbimg1.mncdn.com/assets/dist/img/tek-tur-large.gif?v=20210128162709" name="{{ asset('assets') }}/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-7">

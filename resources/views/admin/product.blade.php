@@ -13,9 +13,6 @@
                 </a>
                 </div>
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-            </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

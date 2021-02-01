@@ -14,7 +14,7 @@
                 </ul>
             </li>
         @else
-            <li><a href="#">{{$subcategory->title}}</a></li>
+            <li><a href="{{route('categoryproducts',['id'=>$subcategory->id])}}">{{$subcategory->title}}</a></li>
         @endif
     </ul>
 @endforeach
