@@ -23,7 +23,7 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_products')}}" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-fw fa-shopping-bag"></i>
             <span>Products</span>
         </a>
     </li>
@@ -60,8 +60,18 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="{{route('admin_message')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-mail-bulk"></i>
             <span>Messages</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin_review')}}">
+            <i class="fas fa-fw fa-star"></i>
+            <span>Reviews</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin_faq')}}">
+            <i class="fas fa-fw fa-question"></i>
+            <span>FAQ</span></a>
     </li>
 
     <!-- Nav Item - Tables -->

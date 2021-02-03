@@ -25,7 +25,8 @@
                 <div><a href="#"> {{Auth::user()->name}}</a></div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="{{route('userprofile')}}">My Account</a></li>
+                    <li><a href="{{route('myreviews')}}">My Reviews</a></li>
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             @endauth
@@ -97,6 +98,7 @@
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
                                     <li><a href="{{route('userprofile')}}">My Account</a></li>
+                                    <li><a href="{{route('myreviews')}}">My Reviews</a></li>
                                     <li><a href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             @endauth
@@ -120,7 +122,7 @@
                         <li><a href="{{route('home')}}">Shop</a></li>
                         <li><a href="{{route('aboutus')}}">Aboutus</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
-                        <li><a href="{{route('fag')}}">FAQ</a></li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </nav>

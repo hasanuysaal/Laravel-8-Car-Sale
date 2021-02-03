@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use MongoDB\Driver\Session;
@@ -20,13 +23,21 @@ class HomeController extends Controller
         return Setting::first();
     }
 
+    public static function countreview($id){
+        return Review::where('product_id',$id)->count();
+    }
+
+    public static function avgreview($id){
+        return Review::where('product_id',$id)->average('rate');
+    }
+
     public function index(){
         $setting = Setting::first();
         $slider = Product::select('id','title','image','price')->get();
         $latest = Product::latest()->first();
-        $last = Product::select('id','title','image','price')->limit(6)->orderByDesc('id')->get();
-        $top = Product::select('id','title','image','price')->limit(6)->inRandomOrder()->get();
-        $review = Product::select('id','title','image','price')->limit(6)->inRandomOrder()->get();
+        $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        $top = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
+        $review = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
         $data = [
             'setting'=>$setting,
             'slider'=>$slider,
@@ -41,9 +52,38 @@ class HomeController extends Controller
 
     public function product($id){
         $data = Product::find($id);
-        print_r($data);
-        exit();
+        $datalist = Image::where('product_id',$id)->get();
+        $reviews = Review::where('product_id',$id)->get();
+        return view('home.product_detail',['data'=>$data, 'datalist'=>$datalist,'reviews'=>$reviews]);
     }
+
+    public function getproduct(Request $request){
+
+        $search = $request->input('search');
+
+        $count = Product::where('title','like','%'.$search.'%')->get()->count();
+
+        if($count==1)
+        {
+            $data = Product::where('title','like','%'.$search.'%')->first();
+            return redirect()->route('product',['id'=>$data->id]);
+        }
+        else
+        {
+            return redirect()->route('productlist',['search'=>$search]);
+        }
+            //$data = Product::where('title',$request->input('search'))->first();
+
+
+    }
+
+    public function productlist($search){
+
+        $datalist = Product::where('title','like','%'.$search.'%')->get();
+        return view('home.search_products',['search'=>$search,'datalist'=>$datalist]);
+
+    }
+
 
     public function addtocart($id){
 
@@ -55,7 +95,15 @@ class HomeController extends Controller
     public function categoryproducts($id){
         $datalist = Product::where('category_id',$id)->get();
         $data = Category::find($id);
-        return view('home.category_products',['data'=>$data,'datalist'=>$datalist]);
+        $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        return view('home.category_products',['data'=>$data,'datalist'=>$datalist,'last'=>$last]);
+    }
+
+    public function deneme($id,$make){
+        $datalist = Product::where('make',$make)->get();
+        $data = Category::find($id);
+        $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        return view('home.deneme',['data'=>$data,'datalist'=>$datalist,'last'=>$last,'make'=>$make]);
     }
 
     public function aboutus(){
@@ -82,9 +130,9 @@ class HomeController extends Controller
 
         return redirect()->route('contact')->with('success','Mesajınız Kaydedilmiştir, Teşekkür Ederiz...');
     }
-    public function fag(){
-        $setting = Setting::first();
-        return view('home.fag',['setting'=>$setting]);
+    public function faq(){
+        $datalist = Faq::all()->sortBy('position');
+        return view('home.faq',['datalist'=>$datalist]);
     }
     //
 

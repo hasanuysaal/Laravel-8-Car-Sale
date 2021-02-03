@@ -32,14 +32,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name("aboutus");
 Route::get('/references', [HomeController::class, 'references'])->name("references");
-Route::get('/fag', [HomeController::class, 'fag'])->name("fag");
+Route::get('/faq', [HomeController::class, 'faq'])->name("faq");
 Route::get('/contact', [HomeController::class, 'contact'])->name("contact");
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name("sendmessage");
 Route::get('/product/{id}', [HomeController::class, 'product'])->name("product");
 Route::get('/categoryproducts/{id}', [HomeController::class, 'categoryproducts'])->name("categoryproducts");
 Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->whereNumber('id')->name("addtocart");
-
-
+Route::post('/getproduct', [HomeController::class, 'getproduct'])->name("getproduct");
+Route::get('/productlist/{search}', [HomeController::class, 'productlist'])->name("productlist");
+Route::get('/deneme/{id}/{make}', [HomeController::class, 'deneme'])->name("deneme");
 
 
 //--- Admin---
@@ -78,6 +79,15 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
 
     });
 
+    Route::prefix('review')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\Admin\ReviewController::class, 'index'])->name("admin_review");
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name("admin_review_update");
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name("admin_review_delete");
+        Route::get('/show/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'show'])->name("admin_review_show");
+
+    });
+
     Route::prefix('image')->group(function () {
 
         Route::get('/create/{product_id}', [App\Http\Controllers\Admin\ImageController::class, 'create'])->name("admin_image_add");
@@ -90,6 +100,17 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::get('/setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name("admin_setting");
     Route::post('/setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name("admin_setting_update");
 
+    Route::prefix('faq')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\Admin\FaqController::class, 'index'])->name("admin_faq");
+        Route::get('/create', [App\Http\Controllers\Admin\FaqController::class, 'create'])->name("admin_faq_add");
+        Route::post('/store', [App\Http\Controllers\Admin\FaqController::class, 'store'])->name("admin_faq_store");
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\FaqController::class, 'edit'])->name("admin_faq_edit");
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\FaqController::class, 'update'])->name("admin_faq_update");
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name("admin_faq_delete");
+        Route::get('/show', [App\Http\Controllers\Admin\FaqController::class, 'show'])->name("admin_faq_show");
+
+    });
 });
 
 Route::middleware('auth')->prefix('/user')->namespace('user')->group(function () {
@@ -111,5 +132,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
 
     Route::get('/profile',[\App\Http\Controllers\UserController::class,'index'])->name('userprofile');
+    Route::get('/myreviews',[\App\Http\Controllers\UserController::class,'myreviews'])->name('myreviews');
+    Route::get('/deletereview/{id}',[\App\Http\Controllers\UserController::class,'destroyreview'])->name('myreview_delete');
+
 
 });

@@ -12,7 +12,7 @@
             <span style="color: black; background-color: white;">{{$latest->title}}</span>
             <h2>{{$latest->make}} <br />{{$latest->series}}</h2>
             <p >{{$latest->price}} TL</p>
-            <a href="#" class="primary-btn">SHOP NOW</a>
+            <a href="{{route('product',['id'=>$latest->id])}}" class="primary-btn">SHOP NOW</a>
         </div>
     </div>
 @endsection
@@ -169,8 +169,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
                         <h4>Latest Products</h4>
+                        @foreach($last as $rs)
                         <div class="latest-product__slider owl-carousel">
-                            @foreach($last as $rs)
                             <div class="latest-prdouct__slider__item">
                                 <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic" style="height: 110px; width: 110px;">
@@ -182,15 +182,15 @@
                                     </div>
                                 </a>
                             </div>
-                            @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
                         <h4>Top Rated Products</h4>
+                        @foreach($top as $rs)
                         <div class="latest-product__slider owl-carousel">
-                            @foreach($top as $rs)
                             <div class="latest-prdouct__slider__item">
                                 <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic" style="height: 110px; width: 110px;">
@@ -202,16 +202,16 @@
                                     </div>
                                 </a>
                             </div>
-                            @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
                         <h4>Review Products</h4>
+                        @foreach($review as $rs)
                         <div class="latest-product__slider owl-carousel">
-                            @foreach($review as $rs)
                             <div class="latest-prdouct__slider__item">
                                 <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic" style="height: 110px; width: 110px;">
@@ -223,8 +223,8 @@
                                     </div>
                                 </a>
                             </div>
-                            @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7">
-            <div class="contact-form spad">
+            <div class="contact-form spad" style="padding-top: 2px;">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="contact__form__title">
@@ -20,7 +20,7 @@
             </div>
             <div class="col-lg-5 col-md-7">
                 <!-- Contact Form Begin -->
-                <div class="contact-form spad">
+                <div class="contact-form spad" style="padding-top: 2px;">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">

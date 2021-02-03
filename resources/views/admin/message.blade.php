@@ -5,14 +5,14 @@
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <div class="row">
+        <div class="card-header py-3">
+            <div class="row">
                 <h6 class=" col-lg-10 m-0 font-weight-bold text-primary">Messages</h6>
-                    <div >
-                        @include('home.message')
-                    </div>
+                <div >
+                    @include('home.message')
                 </div>
             </div>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
