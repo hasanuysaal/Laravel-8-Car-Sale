@@ -27,6 +27,8 @@
                 <ul>
                     <li><a href="{{route('userprofile')}}">My Account</a></li>
                     <li><a href="{{route('myreviews')}}">My Reviews</a></li>
+                    <li><a href="{{route('user_products')}}">My Products</a></li>
+                    <li><a href="{{route('user_wishlist')}}">My Wishlist</a></li>
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             @endauth
@@ -73,7 +75,7 @@
                     <div class="header__top__left">
                         <ul>
                             <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                            <li>Free Shipping for all Order of $99</li>
+                            <li>@include('home.message')</li>
                         </ul>
                     </div>
                 </div>
@@ -99,6 +101,8 @@
                                 <ul>
                                     <li><a href="{{route('userprofile')}}">My Account</a></li>
                                     <li><a href="{{route('myreviews')}}">My Reviews</a></li>
+                                    <li><a href="{{route('user_products')}}">My Products</a></li>
+                                    <li><a href="{{route('user_wishlist')}}">My Wishlist</a></li>
                                     <li><a href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             @endauth
@@ -128,10 +132,12 @@
                 </nav>
             </div>
             <div class="col-lg-2">
+                @php
+                    $countwish= \App\Http\Controllers\WishlistController::countwish(\Illuminate\Support\Facades\Auth::id());
+                @endphp
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="{{route('user_wishlist')}}"><i class="fa fa-heart"></i> <span>{{$countwish}}</span></a></li>
                     </ul>
                 </div>
             </div>

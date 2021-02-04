@@ -66,7 +66,6 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name("admin_product_update");
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name("admin_product_delete");
         Route::get('/show', [App\Http\Controllers\Admin\ProductController::class, 'show'])->name("admin_product_show");
-
     });
 
     Route::prefix('message')->group(function () {
@@ -76,7 +75,6 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
         Route::post('/update/{id}', [App\Http\Controllers\Admin\MessageController::class, 'update'])->name("admin_message_update");
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name("admin_message_delete");
         Route::get('/show', [App\Http\Controllers\Admin\MessageController::class, 'show'])->name("admin_message_show");
-
     });
 
     Route::prefix('review')->group(function () {
@@ -85,7 +83,6 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name("admin_review_update");
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name("admin_review_delete");
         Route::get('/show/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'show'])->name("admin_review_show");
-
     });
 
     Route::prefix('image')->group(function () {
@@ -94,7 +91,6 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
         Route::post('/store/{product_id}', [App\Http\Controllers\Admin\ImageController::class, 'store'])->name("admin_image_store");
         Route::get('/delete/{id}/{product_id}', [App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name("admin_image_delete");
         Route::get('/show', [App\Http\Controllers\Admin\ImageController::class, 'show'])->name("admin_image_show");
-
     });
 
     Route::get('/setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name("admin_setting");
@@ -109,13 +105,39 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
         Route::post('/update/{id}', [App\Http\Controllers\Admin\FaqController::class, 'update'])->name("admin_faq_update");
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name("admin_faq_delete");
         Route::get('/show', [App\Http\Controllers\Admin\FaqController::class, 'show'])->name("admin_faq_show");
-
     });
 });
 
 Route::middleware('auth')->prefix('/user')->namespace('user')->group(function () {
 
     Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name("myprofile");
+
+    Route::prefix('product')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\ProductController::class, 'index'])->name("user_products");
+        Route::get('/create', [App\Http\Controllers\ProductController::class, 'create'])->name("user_product_add");
+        Route::post('/store', [App\Http\Controllers\ProductController::class, 'store'])->name("user_product_store");
+        Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name("user_product_edit");
+        Route::post('/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name("user_product_update");
+        Route::get('/delete/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name("user_product_delete");
+        Route::get('/show', [App\Http\Controllers\ProductController::class, 'show'])->name("user_product_show");
+    });
+
+    Route::prefix('image')->group(function () {
+
+        Route::get('/create/{product_id}', [App\Http\Controllers\ImageController::class, 'create'])->name("user_image_add");
+        Route::post('/store/{product_id}', [App\Http\Controllers\ImageController::class, 'store'])->name("user_image_store");
+        Route::get('/delete/{id}/{product_id}', [App\Http\Controllers\ImageController::class, 'destroy'])->name("user_image_delete");
+        Route::get('/show', [App\Http\Controllers\ImageController::class, 'show'])->name("user_image_show");
+    });
+
+    Route::prefix('wishlist')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\WishlistController::class, 'index'])->name("user_wishlist");
+        Route::get('/store/{id}', [App\Http\Controllers\WishlistController::class, 'store'])->name("user_wishlist_add");
+        Route::post('/update/{id}', [App\Http\Controllers\WishlistController::class, 'update'])->name("user_wishlist_update");
+        Route::get('/delete/{id}', [App\Http\Controllers\WishlistController::class, 'destroy'])->name("user_wishlist_delete");
+    });
 
 });
 
@@ -134,6 +156,4 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
     Route::get('/profile',[\App\Http\Controllers\UserController::class,'index'])->name('userprofile');
     Route::get('/myreviews',[\App\Http\Controllers\UserController::class,'myreviews'])->name('myreviews');
     Route::get('/deletereview/{id}',[\App\Http\Controllers\UserController::class,'destroyreview'])->name('myreview_delete');
-
-
 });

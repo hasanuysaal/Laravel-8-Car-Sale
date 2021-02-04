@@ -3,6 +3,7 @@
 @section('title', 'User Profile')
 
 @section('content')
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-5">
@@ -34,7 +35,7 @@
                                                 <td >
                                                     <h5>{{$rs->id}}</h5>
                                                 </td>
-                                                <td > <a href="{{route('product',[$rs->product->id])}}" target="_blanbk">
+                                                <td > <a href="{{route('product',[$rs->product->id])}}" target="_blank">
                                                     <h5>{{$rs->product->title}}</h5></a>
                                                 </td>
                                                 <td >

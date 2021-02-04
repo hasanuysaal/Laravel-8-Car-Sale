@@ -26,6 +26,7 @@
                         <th>Model</th>
                         <th>Year</th>
                         <th>Price</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Image Gallery</th>
                         <th>Edit</th>
@@ -45,6 +46,7 @@
                             <td>{{$rs->model}}</td>
                             <td>{{$rs->year}}</td>
                             <td>{{$rs->price}}</td>
+                            <td>{{$rs->status}}</td>
                             <td>
                                 @if ($rs->image)
                                     <img src="{{Illuminate\Support\Facades\Storage::url($rs->image)}}" height="40px" alt="">

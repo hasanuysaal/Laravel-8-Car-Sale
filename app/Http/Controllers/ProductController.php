@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -19,8 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $datalist = Product::all();
-        return view('admin.product',['datalist' => $datalist]);
+        $datalist = Product::where('user_id',Auth::id())->get();
+        return view('home.user_product',['datalist' => $datalist]);
     }
 
     /**
@@ -31,7 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         $datalist = Category::with('children')->get();
-        return view('admin.product_add',['datalist' => $datalist]);
+        return view('home.user_product_add',['datalist' => $datalist]);
     }
 
     /**
@@ -62,10 +60,9 @@ class ProductController extends Controller
         $data->traction = $request->input('traction');
         $data->color = $request->input('color');
         $data->condition = $request->input('condition');
-        $data->status = $request->input('status');
         $data->image = Storage::putFile('images',$request->file('image'));
         $data->save();
-        return redirect()->route('admin_products');
+        return redirect()->route('user_products')->with('success','Product Added Successfully');
     }
 
     /**
@@ -89,7 +86,7 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $datalist = Category::with('children')->get();
-        return view('admin.product_edit', ['data' => $data,'datalist' => $datalist]);
+        return view('home.user_product_edit', ['data' => $data,'datalist' => $datalist]);
 
     }
 
@@ -122,13 +119,12 @@ class ProductController extends Controller
         $data->traction = $request->input('traction');
         $data->color = $request->input('color');
         $data->condition = $request->input('condition');
-        $data->status = $request->input('status');
         if ($request->file('image')!=null)
         {
             $data->image = Storage::putFile('images',$request->file('image'));
         }
         $data->save();
-        return redirect()->route('admin_products');
+        return redirect()->route('user_products');
     }
 
     /**
@@ -143,7 +139,7 @@ class ProductController extends Controller
         $data = Product::find($id);
         $data->delete();
 
-        return redirect()->route('admin_products');
+        return redirect()->route('user_products');
 
     }
 }

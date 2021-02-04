@@ -9,6 +9,7 @@ use App\Models\Message;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
 use MongoDB\Driver\Session;
 
@@ -93,14 +94,14 @@ class HomeController extends Controller
     }
 
     public function categoryproducts($id){
-        $datalist = Product::where('category_id',$id)->get();
+        $datalist = Product::where('category_id',$id)->where('status','true')->get();
         $data = Category::find($id);
         $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
         return view('home.category_products',['data'=>$data,'datalist'=>$datalist,'last'=>$last]);
     }
 
     public function deneme($id,$make){
-        $datalist = Product::where('make',$make)->get();
+        $datalist = Product::where('make',$make)->where('status','true')->get();
         $data = Category::find($id);
         $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
         return view('home.deneme',['data'=>$data,'datalist'=>$datalist,'last'=>$last,'make'=>$make]);
@@ -135,7 +136,30 @@ class HomeController extends Controller
         return view('home.faq',['datalist'=>$datalist]);
     }
     //
-
+    public static function getownerphone($id)
+    {
+        $data = Product::where('id',$id)->first();
+        $owner_id = $data->user_id;
+        $owner = User::where('id',$owner_id)->first();
+        $ownernumber = $owner->phone;
+        return $ownernumber;
+    }
+    public static function getowneraddress($id)
+    {
+        $data = Product::where('id',$id)->first();
+        $owner_id = $data->user_id;
+        $owner = User::where('id',$owner_id)->first();
+        $owneradress = $owner->address;
+        return $owneradress;
+    }
+    public static function getownername($id)
+    {
+        $data = Product::where('id',$id)->first();
+        $owner_id = $data->user_id;
+        $owner = User::where('id',$owner_id)->first();
+        $ownername= $owner->name;
+        return $ownername;
+    }
 
 
 }
