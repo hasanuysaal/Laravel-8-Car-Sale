@@ -20,6 +20,8 @@
         </div>
     </form>
 
+    @include('home.message')
+
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
@@ -172,8 +174,10 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @auth
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                    <img class="img-profile rounded-circle"
-                         src="{{asset('assets')}}/admin/img/undraw_profile.svg">
+                    @if (\Illuminate\Support\Facades\Auth::user()->profile_photo_path)
+                        <img class="img-profile rounded-circle" src="{{Illuminate\Support\Facades\Storage::url(\Illuminate\Support\Facades\Auth::user()->profile_photo_path)}}" alt="">
+                    @endif
+
                 @endauth
             </a>
             <!-- Dropdown - User Information -->

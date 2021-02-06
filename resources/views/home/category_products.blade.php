@@ -107,10 +107,23 @@
                             <h4>Latest Products</h4>
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
-                                    @foreach($last as $rs)
+                                    @foreach($last1 as $rs)
                                         <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="width: 110px; height: 110px;" alt="">
+                                            <div class="latest-product__item__pic" style="height: 110px; width: 110px; border-radius: 20px;">
+                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>{{$rs->title}}</h6>
+                                                <span>{{$rs->price}} TL</span>
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                </div>
+                                <div class="latest-prdouct__slider__item">
+                                    @foreach($last2 as $rs)
+                                        <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
+                                            <div class="latest-product__item__pic" style="height: 110px; width: 110px; border-radius: 20px;">
+                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{$rs->title}}</h6>
@@ -153,7 +166,7 @@
                     @foreach($datalist as $rs)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 270px;">
+                                <div class="product__item__pic set-bg" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 270px; border-radius: 20px;">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="{{route('user_wishlist_add',['id'=>$rs->id])}}"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="{{route('product',['id'=>$rs->id])}}"><i class="fa fa-shopping-cart"></i></a></li>

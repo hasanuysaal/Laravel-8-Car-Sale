@@ -1,31 +1,22 @@
 @extends('layouts.admin')
 
-@section('title', 'Reviews List')
+@section('title', 'User List')
 
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <div class="row">
-                <h6 class=" col-lg-10 m-0 font-weight-bold text-primary">Messages</h6>
-                <div >
-                    @include('home.message')
-                </div>
-            </div>
-        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Id</th>
+                        <th></th>
                         <th>Name</th>
-                        <th>Product</th>
-                        <th>Subject</th>
-                        <th>Review</th>
-                        <th>Rate</th>
-                        <th>Status</th>
-                        <th>Date</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Roles</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -35,21 +26,25 @@
                         <tr>
                             <td>{{$rs->id}}</td>
                             <td>
-                                <a href="{{route('admin_user_show',['id'=>$rs->user->id])}}" onclick="return  !window.open(this.href,'','top=50 left=100 width=700,height=700')">
-                                    {{$rs->user->name}}</a>
+                                @if ($rs->profile_photo_path)
+                                    <img class="img-profile rounded-circle" src="{{Illuminate\Support\Facades\Storage::url($rs->profile_photo_path)}}" height="40px" width="40px" style="border-radius: 10px;" alt="">
+                                @endif
                             </td>
-
-                            <td><a href="{{route('product',[$rs->product->id])}}" target="_blanbk">
-                                    {{$rs->product->title}}</a></td>
-                            <td>{{$rs->subject}}</td>
-                            <td>{{$rs->review}}</td>
-                            <td>{{$rs->rate}}</td>
-                            <td>{{$rs->status}}</td>
-                            <td>{{$rs->created_at}}</td>
-                            <td><a href="{{route('admin_review_show',['id'=>$rs->id])}}" class="btn btn-info btn-circle" onclick="return  !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                            <td>{{$rs->name}}</td>
+                            <td>{{$rs->email}}</td>
+                            <td>{{$rs->phone}}</td>
+                            <td>{{$rs->address}}</td>
+                            <td> @foreach($rs->roles as $row)
+                                     {{$row->name}}
+                                @endforeach
+                                <a href="{{route('admin_user_roles',['id'=>$rs->id])}}" onclick="return  !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                    <i class="fas fa-fw fa-plus"></i>
+                                </a>
+                            </td>
+                            <td><a href="{{route('admin_user_edit',['id' => $rs->id])}}" onclick="return confirm('Edit ! Are you sure?')" class="btn btn-info btn-circle">
                                     <i class="fas fa-fw fa-cog"></i>
                                 </a></td>
-                            <td><a href="{{route('admin_review_delete',['id' => $rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle">
+                            <td><a href="{{route('admin_user_delete',['id' => $rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger btn-circle">
                                     <i class="fas fa-trash"></i>
                                 </a></td>
                         </tr>

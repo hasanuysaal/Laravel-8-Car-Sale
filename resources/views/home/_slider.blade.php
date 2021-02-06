@@ -5,7 +5,7 @@
             <div class="categories__slider owl-carousel">
                 @foreach($slider as $rs)
                 <div class="col-lg-3">
-                    <div class="categories__item set-bg" style="height: 270px" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}">
+                    <div class="categories__item set-bg" style="height: 270px; border-radius: 20px;" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}">
                         <h5><a href="{{route('product',['id'=>$rs->id])}}">{{$rs->title}}</a></h5>
                     </div>
                 </div>

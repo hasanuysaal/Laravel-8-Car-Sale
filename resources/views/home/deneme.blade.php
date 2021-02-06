@@ -106,7 +106,7 @@
                                     @foreach($last as $rs)
                                         <a href="{{route('product',['id'=>$rs->id])}}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
-                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="width: 110px; height: 110px;" alt="">
+                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="width: 110px; height: 110px; border-radius: 20px;" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{$rs->title}}</h6>
@@ -149,7 +149,7 @@
                     @foreach($datalist as $rs)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 270px;">
+                                <div class="product__item__pic set-bg" data-setbg="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 270px; border-radius: 20px;">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="{{route('product',['id'=>$rs->id])}}"><i class="fa fa-retweet"></i></a></li>

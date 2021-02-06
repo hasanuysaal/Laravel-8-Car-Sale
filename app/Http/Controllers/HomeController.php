@@ -11,6 +11,7 @@ use App\Models\Review;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use MongoDB\Driver\Session;
 
 class HomeController extends Controller
@@ -34,19 +35,27 @@ class HomeController extends Controller
 
     public function index(){
         $setting = Setting::first();
+        $datalist = Product::select('id','title','image','price')->limit(8)->get();
         $slider = Product::select('id','title','image','price')->get();
         $latest = Product::latest()->first();
-        $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
-        $top = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
-        $review = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
+        $last1 = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        $top1 = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
+        $review1 = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
+        $last2 = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        $top2 = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
+        $review2 = Product::select('id','title','image','price')->limit(3)->inRandomOrder()->get();
         $data = [
             'setting'=>$setting,
             'slider'=>$slider,
-            'last'=>$last,
-            'top'=>$top,
-            'review'=>$review,
+            'last1'=>$last1,
+            'top1'=>$top1,
+            'review1'=>$review1,
+            'last2'=>$last2,
+            'top2'=>$top2,
+            'review2'=>$review2,
             'page'=>'home',
             'latest'=>$latest,
+            'datalist'=>$datalist,
             ];
         return view('home.index',$data);
     }
@@ -96,8 +105,9 @@ class HomeController extends Controller
     public function categoryproducts($id){
         $datalist = Product::where('category_id',$id)->where('status','true')->get();
         $data = Category::find($id);
-        $last = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
-        return view('home.category_products',['data'=>$data,'datalist'=>$datalist,'last'=>$last]);
+        $last1 = Product::select('id','title','image','price')->limit(3)->orderByDesc('id')->get();
+        $last2 = Product::select('id','title','image','price')->limit(3)->orderByDesc('year')->get();
+        return view('home.category_products',['data'=>$data,'datalist'=>$datalist,'last1'=>$last1,'last2'=>$last2]);
     }
 
     public function deneme($id,$make){
@@ -161,5 +171,38 @@ class HomeController extends Controller
         return $ownername;
     }
 
+    public function login(){
+        return view('admin.login');
+    }
+
+    public function logincheck(Request $request)
+    {
+        if ($request->isMethod('post'))
+        {
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+
+                return redirect()->intended('admin');
+            }
+
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
+        }else{
+            return view('admin.login');
+        }
+    }
+    public function logout(Request $request){
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 
 }

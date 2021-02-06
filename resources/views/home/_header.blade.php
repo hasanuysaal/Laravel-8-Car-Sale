@@ -29,6 +29,12 @@
                     <li><a href="{{route('myreviews')}}">My Reviews</a></li>
                     <li><a href="{{route('user_products')}}">My Products</a></li>
                     <li><a href="{{route('user_wishlist')}}">My Wishlist</a></li>
+                    @php
+                        $userRoles = \Illuminate\Support\Facades\Auth::user()->roles->pluck('name');
+                    @endphp
+                    @if($userRoles->contains('admin'))
+                        <li><a href="{{route('admin_home')}}"  target="_blank">Admin Panel</a></li>
+                    @endif
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             @endauth
@@ -59,7 +65,7 @@
     </div>
     <div class="humberger__menu__contact">
         <ul>
-            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+            <li><i class="fa fa-envelope"></i>hello@colorlib.com</li>
             <li>Free Shipping for all Order of $99</li>
         </ul>
     </div>
@@ -82,16 +88,15 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
                         <div class="header__top__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            <a href="#" ><i class="fa fa-facebook"></i></a>
+                            <a href="#" ><i class="fa fa-twitter"></i></a>
+                            <a href="#" ><i class="fa fa-linkedin"></i></a>
                         </div>
                         <div class="header__top__right__language">
                             <i class="fa fa-user"></i>
                             @guest
                                 <div>
-                                    <a style="color: #1a202c" href="{{route('admin_login')}}"> Login </a>
+                                    <a style="color: #1a202c" href="{{route('login')}}"> Login </a>
                                     <a style="color: #1a202c" href="{{route('register')}}">/ Register</a>
                                 </div>
                             @endguest
@@ -103,6 +108,12 @@
                                     <li><a href="{{route('myreviews')}}">My Reviews</a></li>
                                     <li><a href="{{route('user_products')}}">My Products</a></li>
                                     <li><a href="{{route('user_wishlist')}}">My Wishlist</a></li>
+                                    @php
+                                        $userRoles = \Illuminate\Support\Facades\Auth::user()->roles->pluck('name');
+                                    @endphp
+                                    @if($userRoles->contains('admin'))
+                                        <li><a href="{{route('admin_home')}}"  target="_blank">Admin Panel</a></li>
+                                    @endif
                                     <li><a href="{{route('logout')}}">Logout</a></li>
                                 </ul>
                             @endauth

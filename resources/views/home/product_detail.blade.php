@@ -4,18 +4,17 @@
 
 @section('content')
     <hr>
-
     <!-- Product Details Section Begin -->
     <section class="product-details spad" style="padding-top: 2px;">
         <div class="container">
             <div class="row">
-                <div class="product__details__text">
-                    <h3>{{$data->title}}</h3>
-                </div>
                 <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>{{$data->title}}</h3>
+                    </div>
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large" style="height: 540px; width: 560px;"
+                            <img class="product__details__pic__item--large" style="height: 540px; width: 560px; border-radius: 15px;"
                                  src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">

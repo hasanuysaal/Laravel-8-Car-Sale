@@ -31,11 +31,6 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
-
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -73,6 +68,14 @@
             <i class="fas fa-fw fa-question"></i>
             <span>FAQ</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin_user')}}" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Users</span>
+        </a>
+    </li>
+
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
